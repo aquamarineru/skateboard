@@ -14,13 +14,13 @@ const useContentful = () => {
                 select: "fields"
             } )
              
-            const sanitaizedEntries = entries.includes.map((includes) =>{
+            /*const sanitaizedEntries = entries.includes.map((includes) =>{
                 const  details  = includes.fields.details}
             )
                return {
                 ...includes.fields,
                 details
-               }
+               }*/
             
     } catch(error) {
         console.log(`Error ${error}`)
