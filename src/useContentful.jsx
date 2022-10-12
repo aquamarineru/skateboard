@@ -2,8 +2,8 @@ import { createClient } from "contentful"
 const useContentful = () => {
    const client = createClient({
         space: "aor43zbaylh8",
-        accessToken:"PsSLw0G7z6cC2ObV4Vb0fsGQE7dRhMtSIJUDjyvCFfM" ,
-        host: "preview.contentful.com"
+        accessToken:"ATWWatj9sJ6H3-Pphb9QuPbk93e8eIPJf0o0RcRf_xM" ,
+        host: "cdn.contentful.com"
     })
 
 
@@ -14,18 +14,21 @@ const useContentful = () => {
                 select: "fields"
             } )
              
-            /*const sanitaizedEntries = entries.includes.map((includes) =>{
-                const  details  = includes.fields.details}
-            )
-               return {
-                ...includes.fields,
-                details
-               }*/
+           const sanitaizedEntries = entries.items.map((items) =>{
+             const photo = items.fields.photo.fields
+            return {
+                ...items.fields,
+                photo
             
+               }
+           })
+              
+      return sanitaizedEntries      
     } catch(error) {
         console.log(`Error ${error}`)
     }
 };
     return { getProducts };
 }
+
 export default useContentful
