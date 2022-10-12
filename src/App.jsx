@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import './App.css'
+import Navbar from './components/Navbar'
 import useContentful from './useContentful'
 
 function App() {
@@ -11,9 +11,9 @@ function App() {
   })
   return (
     <div className="App">
-    
+      <Navbar />
     </div>
   )
 }
 
-export default App
+export default App;
