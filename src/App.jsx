@@ -1,6 +1,5 @@
-
 import { useEffect, useState } from 'react'
-import './App.css'
+import Navbar from './components/Navbar'
 import useContentful from './useContentful'
 import ProductCard from './ProductCard';
 
@@ -13,14 +12,20 @@ function App() {
   
 
   useEffect(() => {
+
     getProducts().then((response) => setProducts(response));
   });
 
     return (
-      <div>
-        <h1>Victor's Skateboards</h1>
-           {products.map((product, index) => <ProductCard key={index} product={product} />)}
+      
+      <div className="App">
+          <Navbar />
+          <h1>Victor's Skateboards</h1>
+          {products.map((product, index) => <ProductCard key={index} product={product} />)}
       </div>
+        
+           
+      
     );  
 
 
@@ -28,4 +33,6 @@ function App() {
 
 
 export default App
+
+
 
