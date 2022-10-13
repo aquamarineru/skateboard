@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import { MdOutlineSkateboarding} from "react-icons/md";
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+import Search from './Search';
 
 
 const Navbar = () => {
@@ -15,7 +16,7 @@ const Navbar = () => {
             <MdOutlineSkateboarding className='text-[#dd052b] h-[90px] w-[45px] mx-[5px]'/>
             <h1 className='font-["Bebas Neue"] uppercase tracking-wide'>Skatebords</h1>
           </div>
-            <div className='hidden md:flex'>
+            <div className='hidden md:flex items-center'>
                 <ul className='flex text-white font-["Bebas Neue"] uppercase items-center'>
                     <li>Decks</li>
                     <li>Trucks</li>
@@ -24,12 +25,7 @@ const Navbar = () => {
                     <li>Hardware</li>
                     <li>Griptape</li>
                 </ul>
-                <form className="search-form ml-4">
-                      <input type="text" className="search" />
-                      <button type="submit" className="search-button">
-                      🔎
-                      </button>
-                </form>
+                <Search />
             </div>
             <div onClick={handleNav} className='block ml-[20rem] md:hidden'>
                 {nav ? <AiOutlineClose size={30} className='text-white'/> : <AiOutlineMenu size={30} className='text-white'/>}
