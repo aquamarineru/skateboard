@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from 'react'
 import './App.css'
 import useContentful from './useContentful'
@@ -21,6 +22,7 @@ function App() {
            {products.map((product, index) => <ProductCard key={index} product={product} />)}
       </div>
     );  
+
 
 }
 
