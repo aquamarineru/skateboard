@@ -16,8 +16,11 @@ function App() {
   })
   return (
     <div className="App">
-      <Navbar />
-    </div>
+    <Navbar />
+    <h1>Victor's Skateboards</h1>
+    {products.map((product, index) => <ProductCard key={index} product={product} />)}
+</div>
+  
   )
 }
 
