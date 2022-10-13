@@ -27,11 +27,12 @@ const Navbar = () => {
                 </ul>
                 <Search />
             </div>
-            <div onClick={handleNav} className='block ml-[20rem] md:hidden'>
+            <div onClick={handleNav} className='block md:hidden'>
                 {nav ? <AiOutlineClose size={30} className='text-white'/> : <AiOutlineMenu size={30} className='text-white'/>}
             </div>
             <div>
             <ul className={nav ? 'w-full bg-[#1B272C] text-white absolute top-[90px] left-0 text-center' : 'absolute left-[-100%]'}>
+                    <Search />
                     <li className='text-xl'>Decks</li>
                     <li className='text-xl'>Trucks</li>
                     <li className='text-xl'>Wheels</li>

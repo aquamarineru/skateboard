@@ -4,15 +4,12 @@ import useContentful from './useContentful'
 import ProductCard from './ProductCard';
 
 
-
-
 function App() {
   const { getProducts } = useContentful();
   const [products, setProducts] = useState ([])
   
-
   useEffect(() => {
-    getProducts().then((response) => console.log(response))
+    getProducts().then((response) => setProducts(response))
   })
   return (
     <div className="App">
