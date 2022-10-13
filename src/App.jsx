@@ -12,23 +12,13 @@ function App() {
   
 
   useEffect(() => {
-
-    getProducts().then((response) => setProducts(response));
-  });
-
-    return (
-      
-      <div className="App">
-          <Navbar />
-          <h1>Victor's Skateboards</h1>
-          {products.map((product, index) => <ProductCard key={index} product={product} />)}
-      </div>
-        
-           
-      
-    );  
-
-
+    getProducts().then((response) => console.log(response))
+  })
+  return (
+    <div className="App">
+      <Navbar />
+    </div>
+  )
 }
 
 

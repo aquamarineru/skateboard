@@ -14,7 +14,7 @@ const Navbar = () => {
         <div className='max-w-[1240px] mx-auto px-4 flex justify-between items-center h-full'>
           <div className='logo text-white flex justify-between items-center'>
             <MdOutlineSkateboarding className='text-[#dd052b] h-[90px] w-[45px] mx-[5px]'/>
-            <h1 className='font-["Bebas Neue"] uppercase tracking-wide'>Skatebords</h1>
+            <h1 className='font-["Bebas Neue"] uppercase tracking-wide'>Skateboards</h1>
           </div>
             <div className='hidden md:flex items-center'>
                 <ul className='flex text-white font-["Bebas Neue"] uppercase items-center'>
