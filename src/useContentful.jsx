@@ -1,8 +1,12 @@
 import { createClient } from "contentful"
+
+
 const useContentful = () => {
    const client = createClient({
-        space: "aor43zbaylh8",
-        accessToken:"ATWWatj9sJ6H3-Pphb9QuPbk93e8eIPJf0o0RcRf_xM" ,
+    space: "aor43zbaylh8",
+    accessToken:"ATWWatj9sJ6H3-Pphb9QuPbk93e8eIPJf0o0RcRf_xM" ,
+/*         space: import.meta.env.VITE_CONTENTFUL_SPACE_ID,
+        accessToken: import.meta.env.VITE_CONTENTFUL_ACCESS_TOKEN, */
         host: "cdn.contentful.com"
     })
 
