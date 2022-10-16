@@ -10,3 +10,8 @@
     @apply p-4;
   }
 }
+.pacman {
+  display: block;
+  top: 100px;
+  left: 600px;
+}
