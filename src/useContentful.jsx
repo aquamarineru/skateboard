@@ -31,8 +31,6 @@ const useContentful = () => {
              
         }
 
-        
-        
         catch (error) {
         console.log(`Error fetching data: ${error}`)
         }
