@@ -4,24 +4,24 @@ import { createClient } from "contentful"
 const useContentful = () => {
 
    const client = createClient({
-        space: "2qxrnxo2qe5m",
-        accessToken: "ATKEz-nthZMy07n2dV5HBW1yq-n9LKnxn8Ku7tG0nuQ",
-        host: "https://cdn.contentful.com"
+    space: "cj4kajigmc9i",
+    accessToken: "3AzIdyzpQh49YqAQO3wxuVAJF2oMXHiJ5nBggE7mxdg",
+    host: "preview.contentful.com"
     });
 
     const getProducts = async () => {
         try {
             const entries = await client.getEntries({
-                content_type: "product",
+                content_type: "skateboards",
                 select: "fields"
             })
 
             const sanitizedEntries = entries.items.map((item) => {
-                const avatar = item.avatar;
+                //const image = image.fields.file.url
 
                 return {
                     ...item.fields,
-                    avatar
+                    //image
                 }
            })          
 
@@ -34,7 +34,7 @@ const useContentful = () => {
         
         
         catch (error) {
-        console.log(`Error fetching data: ${error}`)
+        console.log(`We are screwed: ${error}`)
         }
     };
     
