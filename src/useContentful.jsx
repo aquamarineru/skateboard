@@ -5,40 +5,58 @@ const useContentful = () => {
 
    const client = createClient({
     space: "cj4kajigmc9i",
-    accessToken: "3AzIdyzpQh49YqAQO3wxuVAJF2oMXHiJ5nBggE7mxdg",
+    accessToken: "Y3mbGG_OdO020zGcTKDZhOSHBlRVrbu1i4IeR8Fe5PU",
     host: "preview.contentful.com"
     });
 
-    const getProducts = async () => {
+    const getContentType = async (type) => {
         try {
             const entries = await client.getEntries({
-                content_type: "skateboards",
+                content_type: type,
                 select: "fields"
             })
 
             const sanitizedEntries = entries.items.map((item) => {
-                //const image = image.fields.file.url
-
+  
                 return {
-                    ...item.fields,
-                    //image
-                }
+                    ...item.fields
+                 }
            })          
 
            return sanitizedEntries;
-
-           
-             
+                 
         }
 
-        
-        
         catch (error) {
         console.log(`We are screwed: ${error}`)
         }
     };
+     
+    const getBearings = async () => {
+       return getContentType("bearings")
+    };  
+
+    const getWheels = async () => {
+        return getContentType("wheels")
+     };  
+     const getHardware = async () => {
+        return getContentType("hardware")
+     };  
+     const getDecks = async () => {
+        return getContentType("decks")
+     };  
+     const getTrucks = async () => {
+        return getContentType("trucks")
+     };  
+
+     const getGriptape = async () => {
+        return getContentType("griptape")
+     };  
+ 
     
-    return { getProducts }
+
+return { getDecks, getBearings, getHardware, getGriptape, getWheels, getTrucks }
 };
+
 
 export default useContentful
