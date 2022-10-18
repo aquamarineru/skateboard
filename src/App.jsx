@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import Navbar from './components/Navbar'
 import useContentful from './useContentful'
-/* import ProductCard from './ProductCard'; */
+import ProductCard from './ProductCard'; 
 import Home from './pages/Home'; 
 import {Route, Routes,} from 'react-router-dom'
 import NotFound from './components/NotFound'
@@ -12,6 +12,7 @@ import Hardware from './pages/Hardware'
 import Trucks from './pages/Trucks'
 import Wheels from './pages/Wheels'
 import PacmanLoader from "react-spinners/PacmanLoader";
+import Footer from './components/Footer';
 
 
 function App() {
@@ -39,7 +40,7 @@ function App() {
 </div> */
     <>
       <Navbar />
-      <div className="container">
+      <div>
         {
           loading ?
           (<PacmanLoader 
@@ -62,7 +63,7 @@ function App() {
         </Routes>
         }
       </div>
-      
+      <Footer />
     </>
   
   )
