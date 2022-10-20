@@ -20,16 +20,26 @@ const Hardware = () => {
         <img className='h-[400px]' src={e.image.fields.file.url}/>
         <h3 className='w-[400px] uppercase font-bold text-xl leading-relaxed text-center'>{e.name}</h3>
         <p className='font-light w-[400px]'>Description: {e.description}</p>
+               
+        </div>)} 
+    <div className="Hardware">
+      {hardware.map(e => <div>
+        <div>
+        <h3>{e.name}</h3>
+        <img src={e.image.fields.file.url}/>
+        </div>
+        <div><p>description: {e.description}</p>
         
 
         
-        </div>)} 
+        </div>
+      </div>)} 
     </div>
     </>
   )
 }
 
 
-
-
 export default Hardware
+
+

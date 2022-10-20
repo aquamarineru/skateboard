@@ -34,6 +34,8 @@ function App() {
             <Navbar />
             
       <div>
+      <div className="container">
+
         {
           loading ?
           (<PacmanLoader 

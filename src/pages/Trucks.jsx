@@ -28,3 +28,4 @@ const Trucks = () => {
   )
 }
 export default Trucks
+
