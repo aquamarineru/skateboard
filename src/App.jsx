@@ -12,6 +12,7 @@ import Hardware from './pages/Hardware'
 import Trucks from './pages/Trucks'
 import Wheels from './pages/Wheels'
 import PacmanLoader from "react-spinners/PacmanLoader";
+import Footer from './components/Footer';
 
 
 function App() {
@@ -32,7 +33,9 @@ function App() {
     <>
             <Navbar />
             
+      <div>
       <div className="container">
+
         {
           loading ?
           (<PacmanLoader 
@@ -55,7 +58,7 @@ function App() {
         </Routes>
         }
       </div>
-      
+      <Footer />
     </>
   
   )
@@ -63,6 +66,5 @@ function App() {
 
 
 export default App
-
 
 
