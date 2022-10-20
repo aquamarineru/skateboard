@@ -3,40 +3,60 @@ import { createClient } from "contentful"
 
 const useContentful = () => {
 
-    const client = createClient({
-        space: "2qxrnxo2qe5m",
-        accessToken: "ATKEz-nthZMy07n2dV5HBW1yq-n9LKnxn8Ku7tG0nuQ",
-        host: "https://cdn.contentful.com"
+   const client = createClient({
+    space: "cj4kajigmc9i",
+    accessToken: "Y3mbGG_OdO020zGcTKDZhOSHBlRVrbu1i4IeR8Fe5PU",
+    host: "preview.contentful.com"
     });
 
-    const getProducts = async () => {
+    const getContentType = async (type) => {
         try {
             const entries = await client.getEntries({
-                content_type: "product",
+                content_type: type,
                 select: "fields"
             })
 
             const sanitizedEntries = entries.items.map((item) => {
-                const avatar = item.avatar;
-
+  
                 return {
-                    ...item.fields,
-                    avatar
-                }
+                    ...item.fields
+                 }
            })          
 
            return sanitizedEntries;
-
-           
-             
+                 
         }
 
         catch (error) {
-        console.log(`Error fetching data: ${error}`)
+        console.log(`We are screwed: ${error}`)
         }
     };
+     
+    const getBearings = async () => {
+       return getContentType("bearings")
+    };  
+
+    const getWheels = async () => {
+        return getContentType("wheels")
+     };  
+     const getHardware = async () => {
+        return getContentType("hardware")
+     };  
+     const getDecks = async () => {
+        return getContentType("decks")
+     };  
+     const getTrucks = async () => {
+        return getContentType("trucks")
+     };  
+
+     const getGriptape = async () => {
+        return getContentType("griptape")
+     };  
+ 
     
-    return { getProducts }
+
+return { getDecks, getBearings, getHardware, getGriptape, getWheels, getTrucks }
 };
+
 
 export default useContentful

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import Navbar from './components/Navbar'
 import useContentful from './useContentful'
-import ProductCard from './ProductCard'; 
+import ProductCard from './ProductCard';
 import Home from './pages/Home'; 
 import {Route, Routes,} from 'react-router-dom'
 import NotFound from './components/NotFound'
@@ -16,9 +16,8 @@ import Footer from './components/Footer';
 
 
 function App() {
-  const { getProducts } = useContentful();
-  const [products, setProducts] = useState ([])
-  const [loading, setLoading] =useState(true)
+  
+    const [loading, setLoading] =useState(true)
   
   useEffect(() => {
     setLoading(true)
@@ -27,19 +26,13 @@ function App() {
     }, 3000)
   }, [])
   
-  useEffect(() => {
-    getProducts().then((response) => setProducts(response))
-  })
+  
  
   return (
-/*     <div className="App">
-      <Navbar />
-      <Home />
-      <h1>Victor's Skateboards</h1>
-      {products.map((product, index) => <ProductCard key={index} product={product} />)}
-</div> */
+     
     <>
-      <Navbar />
+            <Navbar />
+            
       <div>
         {
           loading ?
@@ -49,8 +42,8 @@ function App() {
           color={'#dd052b'}
           loading={loading}
         />)
-  
-          :
+        :
+          
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/decks' element={<Decks />} />
@@ -71,6 +64,5 @@ function App() {
 
 
 export default App
-
 
 
